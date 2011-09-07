@@ -1,4 +1,4 @@
-function initialize() {
+$(document).ready(function(){
 	with(google.maps){
 		var pos = new LatLng(34.63827,135.411279);
 		var map = new Map(document.getElementById("map_canvas"), {
@@ -11,4 +11,4 @@ function initialize() {
 			title: "KansaiRubyKaigi04"});
 		marker.setMap(map);
 	}
-}
+})
