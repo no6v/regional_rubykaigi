@@ -1,19 +1,20 @@
 !!! Strict
 
-%html
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
   %head
-    %meta(charset="utf-8")
+    %meta{"http-equiv" => "Content-Type", :content => "text/xhtml; charset=utf-8"}
+    %title 関西Ruby会議04 - Regional RubyKaigi
     != stylesheet_link_tag "kansai04"
-    %script{:type => "text/javascript", :src => "/javascripts/jquery.js"}
-    <!-- GoogleMapsApi -->
+    != javascript_include_tag "jquery.js"
     %meta{:name => "viewport", :content => "initial-scale=1.0, user-scalable=no"}
+    <!-- GoogleMapsApi -->
     %script{:type => "text/javascript", :src => "http://maps.google.com/maps/api/js?sensor=false"}
     %script{:type => "text/javascript"}
     :javascript
       $(document).ready(function(){
         with(google.maps){
           var pos = new LatLng(34.63827, 135.411279);
-          var map = new Map(document.getElementById("map_canvas"), {
+          var map = new Map(document.getElementById("map"), {
             zoom: 16,
             center: pos,
             mapTypeId: MapTypeId.ROADMAP});
@@ -24,128 +25,48 @@
           marker.setMap(map);
         }
       })
-    %title 関西Ruby会議04 - Regional RubyKaigi
   %body
     %div#wrapper
       %div#user-bar
         %div#user-bar-greeting
           %a#link_to_login{:href => "/login", :style => "border: none;"}Admin
-      -# header
-      %div#logo
-      %div#photo
-      -# container
       %div#container
-        -# left
-        %div#left(class="radius")
-          %h3 会期
-          %div.menu
-            %ul
-              %li
-                %strong 2011-11-11(金) 13:00〜18:00
-              %li
-                %strong 2011-11-12(土) 10:00〜18:00
-          %h3 会場
-          %div.menu
-            %ul
-              %li
-                %a{:href => "http://www.atc-co.com/index.php"}大阪南港ATC
-              %li
-                %a{:href => "http://www.atc-co.com/guide/floor.php?tenant_area=23"}ITM棟 10F デザインギャラリー・デザインショーケース
-              %ul
-                %li (受付・展示会場)
-              %li
-                %a{:href => "http://www.atc-co.com/guide/access.php"}アクセス
-              %li
-                %a{:href => "http://k-of.jp/2011/access.html"}会場までの道案内
-          %div#map_canvas
-          %h3 参加費・事前登録
-          %div.menu
-            %dl
-              %dt 参加費
-              %dd 無料
-              %dt 事前登録
-              %dd 不要
-            お気軽にお越しください。
-          %h3 懇親会
-          %div.menu
-            両日ともに懇親会を予定しています。事前登録が必要です。準備でき次第お知らせします。
-            %dl
-              %dt 11月11日(金)
-              %dd 関西オープンソース2011主催 懇親会
-              %dt 11月12日(土)
-              %dd Ruby関西主催 懇親会
-          %h3 タグ
-          %div.menu
-            %dl
-              %dt 公式ハッシュタグ
-              %dd
-                %a{:href => "http://twitter.com/search?q=%23kanrk04"}#kanrk04
-              %dt 公式タグ
-              %dd kansairubykaigi04
-              %dt twitter
-              %dd
-                %a{:href => "http://twitter.com/rubykansai"}@rubykansai
-          %h3 主催
-          %div.menu
-            %strong 関西Ruby会議04実行委員会
-            %dl
-              %dt 実行委員長
-              %dd
-                != link_to_twitter("@no6v")
-                (Ruby関西)
-              %dt るびまレポート記事担当
-              %dd
-                != link_to_twitter("@muryoimpl")
-                (Ruby関西)
-              %dd
-                != link_to_twitter("@shizuto_a")
-                (無所属)
-              %dt 会計
-              %dd
-                != link_to_twitter("@spring_aki")
-                (Ruby関西)
-              %dd
-                != link_to_twitter("@ayupanda")
-                (Ruby関西)
-              %dt 懇親会幹事
-              %dd
-                != link_to_twitter("@smantani")
-                (Ruby関西)
-              %dt 実務担当
-              %dd
-                != link_to_twitter("@higaki")
-                (Ruby関西)
-          %h3 後援
-          %div.menu
-            %ul
-              %li
-                %a{:href => "https://github.com/ruby-no-kai/official/wiki"}日本Rubyの会
-              %li
-                %a{:href => "http://jp.rubyist.net/?RubyKansai"}Ruby関西
-              %li
-                %a{:href => "http://qwik.jp/minamirb/"}Minami.rb
-          %h3 同時開催
-          %div.menu
-            %ul
-              %li
-                %a{:href => "http://k-of.jp/2011/"}関西オープンソース2011
-              %li
-                %a{:href => "http://k-of.jp/2011/kessen.html"}関西コミュニティ大決戦
-          %h3 企業スポンサー
-          %div.menu
-            %p
-              関西Ruby会議04はご覧の企業スポンサーの提供でお送りします
-            %ul
-              %li
-                %a{:href => "http://bar.foo.example.com/"}
-                  %img{:src => "/images/kansai04/foo-bar.png", :alt => "foo bar", :title => "foo bar"}
-          %h3 個人スポンサー
-          %div.menu
-            %p
-              関西Ruby会議04はご覧の個人スポンサーの提供でお送りします
-            %ul
-              %li
-                != link_to_twitter("@hogefuga")
-        -# Main
-        %div#main
-          = render_hiki(@event.desc)
+        %div#left
+        %div#center
+          %div#top
+          %div#main
+            = render_hiki(@event.desc)
+            %div#access
+              %h3 Map
+              %div#map
+            %div#exco
+              %h3 関西Ruby会議04実行委員会
+              %dl
+                %dt 実行委員長
+                %dd
+                  != link_to_twitter("@no6v")
+                  (Ruby関西)
+                %dt るびまレポート記事担当
+                %dd
+                  != link_to_twitter("@muryoimpl")
+                  (Ruby関西)
+                %dd
+                  != link_to_twitter("@shizuto_a")
+                  (無所属)
+                %dt 会計
+                %dd
+                  != link_to_twitter("@spring_aki")
+                  (Ruby関西)
+                %dd
+                  != link_to_twitter("@ayupanda")
+                  (Ruby関西)
+                %dt 懇親会幹事
+                %dd
+                  != link_to_twitter("@smantani")
+                  (Ruby関西)
+                %dt 雑務担当
+                %dd
+                  != link_to_twitter("@higaki")
+                  (Ruby関西)
+          %div#footer 関西Ruby会議04 KansiaRubyKaigi04
+        %div#right

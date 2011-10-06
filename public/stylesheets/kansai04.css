@@ -1,8 +1,7 @@
-/*全体*/
-body	{
-	background: url("/images/kansai04/bg.png") black;
+body {
 	font-family: Verdana, sans-serif;
 	margin: 0;
+	background-color: #F0E68C;
 }
 
 div#wrapper {
@@ -10,12 +9,11 @@ div#wrapper {
 	margin: 0 auto;
 }
 
-div#container	{
-	width: 958px;
+div#container {
+	width: 953px;
 	margin: 0;
-	background: #000;
-	display: -webkit-box; /* safari,chrome用 */
-	display: -moz-box; /* firefox用 */
+	display: -webkit-box;
+	display: -moz-box;
 }
 
 #user-bar {
@@ -23,177 +21,116 @@ div#container	{
 	position: absolute;
 	top: 0;
 	right: 0;
-	background-color: #000;
+	background-color: #ea1212;
 	color: #fff;
 	font-size: 80%;
 }
 
 #user-bar a {
-	color: #c0c0c0;
+	color: #F0E68C;
 	text-decoration: none;
 }
 
-.radius{
-	border-radius: 10px;
-	-webkit-border-radius: 10px; /*safari,chrome用*/
-	-moz-border-radius: 10px; /*firefox用*/
+div#left {
+	background: url(/images/kansai04/side_l2.png) repeat-y;
+	width: 162px;
+	margin: 0;
 }
 
-.shadow{
-	border: solid 1px white;
-	-moz-box-shadow: 1px 2px 3px #777;
-	-webkit-box-shadow: 1px 2px 3px #777;
+div#center {
+	width: 606px;
 }
 
-/* header */
-
-div#logo	{
-	background: url("/images/kansai04/logo.png") no-repeat #fff;
-	width: 960px;
-	height: 132px;
-}
-
-div#photo	{
-	background: url("/images/kansai04/oedo_top.jpg") no-repeat;
-	width: 960px;
-	height: 360px;
-}
-
-
-/*左側*/
-div#left	{
-	width: 278px;
-	margin: 14px 0 10px 24px;
-	padding: 10px;
-	background: #FF9966;
-	-webkit-box-ordinal-group: 1;　/* Safari,Google Chrome用（1番目に表示 */
-    -moz-box-ordinal-group: 1;　/* Firefox用（1番目に表示） */
-}
-
-#left h3	{
-	width: 278px;
-	color: #B12100;
-	border-bottom: dashed 2px #946243;
-}
-
-.menu	{
-	width: 263px;
-	font-size: 15px;
-	padding: 0 0 0 15px;
-}
-
-.menu a {
-	color: #005243;
-	font-weight: bold;
-	text-decoration: none;
-}
-
-.menu a:hover {
-	color: #732100;
-	text-decoration: underline;
-}
-
-.menu a:link,.menu a:visited	{
-	color:#B12100:
-}
-
-.menu dt	{
-	font-weight: bold;
+div#top {
+	background: url(/images/kansai04/top2.png) no-repeat;
 	margin: 0;
 	padding: 0;
+	height: 364px;
 }
 
-.menu dd	{
-	color: #005243;
-	margin: 0 0 5px 0;
-	padding: 0 0 0 10px;
-}
-
-div#map_canvas	{
-	width: 240px;
-	height: 240px;
-	margin: 5px 19px;
-}
-
-/*メイン*/
-div#main	{
-	width: 570px;
-	margin: 10px 24px 10px 12px;
-	padding:10px;
-	background: #eee;
-	border: double 8px black;
-	color: #444;
+div#main {
+	padding: 5px;
+	color: #1a1516;
 	font-size: 16px;
-	-webkit-box-ordinal-group: 2;　/* Safari,Google Chrome用（2番目に表示 */
-    -moz-box-ordinal-group: 2;　/* Firefox用（2番目に表示） */
 }
 
-#main a	{
-	color: #444;
+div#right {
+	background: url(/images/kansai04/side_r2.png) repeat-y;
+	width: 162px;
+	margin: 0;
 }
 
-
-#main a:hover {
-	color: #c70067;
-	text-decoration: underline;
-}
-
-#main a:link	{
-	color: hotpink:
-}
-
-#main h3	{
-	background: url("/images/kansai04/entry_title.png") no-repeat;
-	height:30px;
-	padding: 2px 0 0 40px;
+#main h3 {
+	background: -webkit-gradient(linear, left top, right top, from(#F0E68C), color-stop(0.5, #ea1212), to(#ea1212));
+	background: -moz-linear-gradient(top left, #F0E68C, #ea1212, #ea1212);
+	height: 30px;
+	padding: 7px 0 0 20px;
 	margin: 15px 0 0 0;
 	font-size: 20px;
-	color: #000;
+	border-radius: 30px;
+	-webkit-border-radius: 30px 30px 0 0;
+	-moz-border-radius: 30px 30px 0 0;
+}
+}
+
+#main h4 {
+	margin: 12px 0 0 0;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 #main h5 {
-	margin: 12px 0 0 1.5em;
+	background: -webkit-gradient(linear, left top, right top, from(#F0E68C), color-stop(0.5, #ea1212), to(#ea1212));
+	background: -moz-linear-gradient(top left, #F0E68C, #ea1212, #ea1212);
+	padding: 0 0 0 7px;
+	margin: 12px 0 0 0;
 	font-size: 14px;
-	font-style: bold;
-	color: #444;
+	border-radius: 14px;
+	-webkit-border-radius: 14px 14px 0 0;
+	-moz-border-radius: 14px 14px 0 0;
 }
 
-#main p	{
-	padding: 0 20px;
-	line-height: 160%;
+div#map {
+	min-height: 240px;
+	width: 80%;
+	margin: auto;
+}
+
+#main a {
+	color: #1a1516;
+}
+
+#main a:hover {
+	color: #ea1212;
+	text-decoration: underline;
 }
 
 #main ul {
-	list-style-type: square;
+	list-style-type: disc;
 	padding-right: 10px;
 	line-height: 160%;
 }
 
-#main dl	{
+#main dl {
 	padding: 0 20px;
 	line-height: 160%;
 }
 
-#main dt	{
+#main dt {
 	margin: 0;
-	background: url("/images/kansai04/icon.png") no-repeat;
-	padding-left:20px;
+	padding-left: 20px;
 	font-weight: bold;
-	border-bottom: solid 1px #444;
 }
 
-#main dd	{
+#main dd {
 	padding-left: 15px;
-	margin: 0 0 10px 0;
+	margin-left: 50px;
 }
 
-.registration_link {
-	border-radius: 4px;
-	-webkit-border-radius: 10px; /*safari,chrome用*/
-	-moz-border-radius: 10px; /*firefox用*/
-	text-align:center;
-	font-size:18px;
-	padding:12px 2px;
-	border: 2px solid #600;
-	margin-bottom:4px
+#footer {
+	background: -webkit-gradient(linear, left top, right top, from(#F0E68C), color-stop(0.5, #ea1212), to(#F0E68C));
+	background: -moz-linear-gradient(top left, #F0E68C, #ea1212, #F0E68C);
+	text-align: center;
+	color: #1a1516;
+	font-weight: bold;
 }
